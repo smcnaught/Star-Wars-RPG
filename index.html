@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Star Wars RPG</title>
+	<!-- linking the css file. -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<!-- linking the reset css file. -->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+	<!-- linking the jQuery.-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- linking the javascript file. -->
+	<script type="text/javascript" src = "assets/javascript/game.js"></script>
+
+
+	<!-- linking bootstrap for columns/rows. -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+	<!-- linking Google Font. -->
+	<link href="https://fonts.googleapis.com/css?family=Lekton:700" rel="stylesheet">
+
+</head>
+<body>
+		<!-- first row that contains the blank space and the "Star Wars RPG!" title. -->
+		<div class = "row">
+			<div class = "col-6">
+				<!-- this column is blank space before the "Star Wars RPG!" title.-->
+			</div>
+
+			<div class = "col-6" id = "RPG">
+			<!-- "Star Wars RPG!" title.-->
+			Star Wars RPG!
+			</div>
+		</div>
+
+		<!-- second row that contains all four pictures at the start of the game. -->
+		<div class = "row" id = "picRow">
+			<div class = "col-2" id = "obi">
+			<!--picture 1: Obi-Wan Kenobi.-->
+			<p class = "name">Obi-Wan Kenobi</p>
+			<img src="assets/images/ObiWan.jpg" id = "image"><br>
+			<p class = "HP">120</p>
+			</div>
+
+			<div class = "col-2" id = "luke">
+			<!--picture 2: Luke Skywalker.-->
+			<p class = "name">Luke Skywalker</p>
+			<img src="assets/images/LukeSkywalker.jpg" id = "image"><br>
+			<p class = "HP">100</p>
+			</div>
+
+			<div class = "col-2" id = "darthS">
+			<!--picture 3: Darth Sidious.-->
+			<p class = "name">Darth Sidious</p>
+			<img src="assets/images/DarthSidious.png" id = "image"><br>
+			<p class = "HP">150</p>
+			</div>
+
+			<div class = "col-2" id = "darthM">
+			<!--picture 4: Darth Maul.-->
+			<p class = "name">Darth Maul</p>
+			<img src="assets/images/DarthMaul.png" id = "image"><br>
+			<p class = "HP">180</p>
+			</div>
+		</div>
+
+		<!-- third row that contains the "Your Character" text.-->
+		<div class = "row" id = "padLeft">
+			<div class = "col-12">
+			Your Character
+			</div>
+		</div>
+
+		<!-- fourth row that contains the character the player chooses.-->
+		<div class = "row" id = "padLeft">
+			<div class = "col-12" id = "yourChar"></div>
+		</div>
+
+		<!-- fifth row that contains the "Enemies available to attack"-->
+		<div class = "row" id = "padLeft">
+			<div class = "col-12">
+			<p>Enemies Available to Attack</p>
+			</div>
+		</div>
+
+		<!-- sixth row that contains the characters the player has yet to attack.-->
+		<div class = "row" id = "padLeft">
+			<div class = "col-12" id = "enemies"></div>
+		</div>
+
+		<!-- seventh row that contains the "Fight Section"-->
+		<div class = "row" id = "padLeft">
+			<div class = "col-12">
+			<p>Fight Section</p>
+			</div>
+		</div>
+
+		<!-- eight row for the "Attack" button.-->
+		<div class = "row" id = "padLeft">
+			<div class = "col-12">
+			<button style = "font-size: 20px; font-family: 'Lekton', sans-serif;">Attack</button>
+			</div>
+		</div>
+
+		<!-- ninth row that contains the "Defender"-->
+		<div class = "row" id = "padLeft">
+			<div class = "col-12">
+			<p>Defender</p>
+			</div>
+		</div>
+		
+		<!-- tenth row that contains the character the player has chosen to attack.-->
+		<div class = "row" id = "padLeft">
+			<div class = "col-12">
+			<!--true/false statements for the enemy image. User has selected = true, then show the image.-->
+			</div>
+		</div>
+
+		<!-- eleventh row that contains the text that shows up when a play attacks.-->
+		<div class = "row" id = "padLeft">
+			<div class = "col-12">
+			<p>text here</p>
+			</div>
+		</div>
+</body>
+</html>
