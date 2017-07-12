@@ -5,29 +5,26 @@ body {
 
 }
 
-.container {
-
-}
 #RPG {
 	font-size: 54px;
 	font-family: 'Lekton', sans-serif;
 }
 
-.col-2 {
+.firstRow{
 	border-style: solid;
-	border-width: 7px;
+	border-width: 3px;
 	border-color: white;
 	box-sizing: border-box;
 	outline-style: solid;
 	outline-color: limegreen;
-	outline-width: 8px;
+	outline-width: 3px;
 	align-items: center;
 	background-color: white;
 }
 
 .name, .HP {
 	text-align: center;
-	font-size: 25px;
+	font-size: 12px;
 	font-family: 'Lekton', sans-serif;
 	margin-bottom: 0px;
 	background-color: white;
@@ -35,25 +32,30 @@ body {
 }
 
 #image{
-	width: 98%;
+	width: 96%;
 	height: 65%;
 		
 }
 
 .col-12 {
 
-	font-size: 30px;
+	font-size: 15px;
 	font-family: 'Lekton', sans-serif;
 }
 
-#picRow {
-	padding-left: 39px;
-	padding-bottom: 13px;
+#obi{
+	margin-left: 18px;
+	
 }
 
-#padLeft {
+.padLeft {
 	padding-left: 20px;
 	padding-top: 3px;
 
 }
+
+#picRow {
+	width: 59%;
+}
+
 
