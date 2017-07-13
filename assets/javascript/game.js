@@ -1,3 +1,19 @@
+// global variables.
+		var attack;
+		var defend;
+		var attackcharacter;
+		var attackerHP;
+	    var attackerAP;
+	    var attackerCAP;
+	    var defendcharacter;
+	    var defenderHP;
+	    var defenderAP;
+	    var defenderCAP;
+	    var name;
+	    var YourCharacter;
+	    var YourDefender;
+	    var myChar = "";
+
 function reset() {
 	window.gameObj = {
 		attackOccurred: false,
@@ -7,81 +23,110 @@ function reset() {
 		gameOver: false,
 	};
 
-	ObiWan.healthPoints = 120;
-	LukeSky.healthPoints = 120;
-	DarSid.healthPoints = 150;
-	DarMaul.healthPoints = 180;
+	characters.ObiWan.healthPoints = 120;
+	characters.LukeSky.healthPoints = 100;
+	characters.DarSid.healthPoints = 150;
+	characters.DarMaul.healthPoints = 180;
 };
 
-// objects to hold each characters stats.
-var ObiWan = { 
-		name: "Obi-Wan Kenobi",
-		visual: 'assets/images/ObiWan.jpg',
-		healthPoints: 120,
-		attackPower: 8,
-		counterAttackPower: 24
+// array to hold each characters stats.
+var characters = { 
+
+	ObiWan: {
+			name: "ObiWan",
+			visual: 'assets/images/ObiWan.jpg',
+			healthPoints: 120,
+			attackPower: 8,
+			counterAttackPower: 24
+			},
+
+	LukeSky:{
+			name: "LukeSky",
+			visual: 'assets/images/LukeSkywalker.jpg',
+			healthPoints: 100,
+			attackPower: 10,
+			counterAttackPower: 5
+			},
+
+	DarSid:{ 
+			name: "DarSid",
+			visual: 'assets/images/DarthSidious.png',
+			healthPoints: 150,
+			attackPower: 10,
+			counterAttackPower: 20
+			},
+
+	DarMaul:{ 
+			name: "DarMaul",
+			visual: 'assets/images/DarthMaul.png',
+			healthPoints: 180,
+			attackPower: 12,
+			counterAttackPower: 25,
+			}
 };
-
-var LukeSky = {
-		name: "Luke Skywalker",
-		visual: 'assets/images/LukeSkywalker.jpg',
-		healthPoints: 100,
-		attackPower: 10,
-		counterAttackPower: 5
-};
-
-var DarSid = {
-		name: "Darth Sideous",
-		visual: 'assets/images/DarthSidious.png',
-		healthPoints: 150,
-		attackPower: 10,
-		counterAttackPower: 20
-};
-
-var DarMaul = {
-		name: "Darth Maul",
-		visual: 'assets/images/DarthMaul.png',
-		healthPoints: 180,
-		attackPower: 12,
-		counterAttackPower: 25,
-};
-
-// array to hold all my characters. 
-var characters = [ObiWan, LukeSky, DarSid, DarMaul];
-
-// attack Constructor to hold the name of the attacker. 
-     var attackerConstructor = function(name, healthPoints){
-     	this.name = name;
-     	this.healthPoints = healthPoints;
-     }
-
-// global variables.
-		var attackerName = "obi";
-		var attackcharacter;
-
-
 
 	$(document).ready(function(){
 		reset();
-
 		
-
-		$(".ob1hp").html(ObiWan.healthPoints);
+		//writing each characters healthpoints to the html so they show up on the page.
+		$(".ob1hp").html(characters.ObiWan.healthPoints);
+		$(".lukehp").html(characters.LukeSky.healthPoints);
+		$(".darthshp").html(characters.DarSid.healthPoints);
+		$(".darthmhp").html(characters.DarMaul.healthPoints);
 
 	// When the player clicks on any of the characters, the game determines which one was clicked, moves the one clicked into
 	// "Your Character" and moves the other three into "Enemies available to attach".
-    $(".firstRow").click(function(){
-             
-	       // clones the chosen character to "Your Character"
+	$(".firstRow").one('click', function(){
+    // $(".firstRow").click(function(){
+            
+           if (myChar === "") {
+	       // clones the chosen character to "Your Character"	       
 	       $(this).appendTo("#yourChar");
-	       var myChar = $(this);
-	       var attacker = $(this).attr("value");
-	       console.log(typeof attacker);     
-
-
+	       myChar = $(this);
+	       YourCharacter = $(myChar).attr("value");
+       	   }
+	       // if else statements that determine who is currently "Your Character" and assign
+	       // that person to the character array's properties. 
+	       if (YourCharacter === characters.ObiWan.name) {
+	       		attackerHP = characters.ObiWan.healthPoints;
+	       		attackerAP = characters.ObiWan.attackPower;
+	       		attackerCAP = characters.ObiWan.counterAttackPower;
+	       		attack = characters.ObiWan;
+	       		console.log(attackerHP);
+	       		console.log(attackerAP);
+	       		console.log(attackerCAP);
+	       }
+	       else if (YourCharacter === characters.LukeSky.name){
+	       		attackerHP = characters.LukeSky.healthPoints;
+	       		attackerAP = characters.LukeSky.attackPower;
+	       		attackerCAP = characters.LukeSky.counterAttackPower;
+	       		attack = characters.LukeSky;
+	       		console.log(attackerHP);
+	       		console.log(attackerAP);
+	       		console.log(attackerCAP);
+	       }
+	       else if (YourCharacter === characters.DarSid.name){
+	       		attackerHP = characters.DarSid.healthPoints;
+	       		attackerAP = characters.DarSid.attackPower;
+	       		attackerCAP = characters.DarSid.counterAttackPower;
+	       		attack = characters.DarSid;
+	       		console.log(attackerHP);
+	       		console.log(attackerAP);
+	       		console.log(attackerCAP);
+	       }
+	       else if (YourCharacter === characters.DarMaul.name){
+	       		attackerHP = characters.DarMaul.healthPoints;
+	       		attackerAP = characters.DarMaul.attackPower;
+	       		attackerCAP = characters.DarMaul.counterAttackPower;
+	       		attack = characters.DarMaul;
+	       		console.log(attackerHP);
+	       		console.log(attackerAP);
+	       		console.log(attackerCAP);
+	       }
+	              
 	       // clones the three remaining characters to "Enemies available to attack" three separate divs.
 	       for (var i = 0; i < 4; i++) {
-	       	$("._" + [i]).not(myChar).clone().appendTo("#enemies" + [i]);
+	       	$("._" + [i]).not(myChar).appendTo("#enemies" + [i]);
 
 	       }
 	               
@@ -94,38 +139,77 @@ var characters = [ObiWan, LukeSky, DarSid, DarMaul];
      // characters remain in "enemies available to attack" section.     
      $(".move").click(function(){
 
-	     	// clones the chosen character to "Defender"
+     	   	// clones the chosen character to "Defender"
+	     	// moves that character to the "Defender" section on the page.
 	     	$(this).appendTo("#defender");
-	     	var defender = this;
-	     	console.log(defender);
+	     	var myDef = $(this);
+	     	YourDefender = $(myDef).attr("value");
+
+
+	     	//YourDefender needs to be equal to the clicked character's name. 
+	     	//YourDefender = $(event.target).name();
+
+	     	// YourDefender = $(myDef).attr("value");
+
+	     	// assigns var myDef to "this"; which is the character in "Defender"
+	     	// var myDef = $(this);
+	     	// // setting the "value" of 'this'/myDef (as defined in the div) to the "Your Defender" variable. 
+	     	// $(myDef).find
+
+
+	     	// YourDefender = $(myDef).attr("value");
+
+	     	// if else statements that determine who is currently "Defender" and assign
+	       // that person to the character array's properties.
+	       if (YourDefender === characters.ObiWan.name) {
+	       		defenderHP = characters.ObiWan.healthPoints;
+	       		defenderAP = characters.ObiWan.attackPower;
+	       		defenderCAP = characters.ObiWan.counterAttackPower;
+	       		defend = characters.ObiWan;
+	       		console.log(defenderHP);
+	       		console.log(defenderAP);
+	       		console.log(defenderCAP);
+	       	}
+	       	else if (YourDefender === characters.LukeSky.name){
+	       		defenderHP = characters.LukeSky.healthPoints;
+	       		defenderAP = characters.LukeSky.attackPower;
+	       		attackerCAP = characters.LukeSky.counterAttackPower;
+	       		defenderCAP = characters.LukeSky;
+	       		console.log(defenderHP);
+	       		console.log(defenderAP);
+	       		console.log(defenderCAP);
+	       }
+	       else if (YourDefender === characters.DarSid.name){
+	       		defenderHP = characters.DarSid.healthPoints;
+	       		defenderAP = characters.DarSid.attackPower;
+	       		defenderCAP = characters.DarSid.counterAttackPower;
+	       		defend = characters.DarSid;
+	       		console.log(defenderHP);
+	       		console.log(defenderAP);
+	       		console.log(defenderCAP);
+	       }
+	       else if (YourDefender === characters.DarMaul.name){
+	       		defenderHP = characters.DarMaul.healthPoints;
+	       		defenderAP = characters.DarMaul.attackPower;
+	       		defenderCAP = characters.DarMaul.counterAttackPower;
+	       		defend = characters.DarMaul;
+	       		console.log(defenderHP);
+	       		console.log(defenderAP);
+	       		console.log(defenderCAP);
+	       }
+
 
      });
 
-     // looping through my "characters" array to figure out who's in the "Your Character" position. 
-     for (var i = 0; i < characters.length; i++) {
-     	if (attackerName === characters[i].name){
-     		attackcharacter = new attackerConstructor(characters[i].name, characters[i].healthPoints);
-     		console.log(attackcharacter.name);
-     		console.log(attackcharacter.healthPoints);
-     	}
-     }
-
-
+    
      // when the user clicks attack, the player/Your Character's Health Points go down based on the counter attack 
      // property of the "Defender".Their counter attack decreases your health.
      $(".attackButton").click(function(){
      		
      });
 
-     //link all characrters to html
-     // for (var i = 0; i < characters.length; i++) {
-     // 	$("#characterContainer").append('<div class = "characters">Name: ' + chracters[i])
-     // 	.name + '</div>');
-     // }
+     
 
-     // $('body').on('click', '.character', function(event){
-
-     // })
 
 
 
