@@ -3,6 +3,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 
+
 }
 
 #RPG {
@@ -27,11 +28,10 @@ body {
 	font-size: 12px;
 	font-family: 'Lekton', sans-serif;
 	margin-bottom: 0px;
-	background-color: white;
 
 }
 
-#image{
+#imageo, #imagel, #imageds, #imagedm {
 	width: 96%;
 	height: 65%;
 		
@@ -41,21 +41,25 @@ body {
 
 	font-size: 15px;
 	font-family: 'Lekton', sans-serif;
-}
 
-#obi{
-	margin-left: 18px;
-	
 }
 
 .padLeft {
 	padding-left: 20px;
 	padding-top: 3px;
 
+
 }
 
 #picRow {
 	width: 59%;
+
 }
 
+#enemies0, #enemies1, #enemies2, #enemies3 {
 
+}
+
+.move {
+
+}
