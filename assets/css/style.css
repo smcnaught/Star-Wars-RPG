@@ -56,10 +56,15 @@ body {
 
 }
 
-#enemies0, #enemies1, #enemies2, #enemies3 {
+/*#enemies0, #enemies1, #enemies2, #enemies3 {
+	float: left;
 
 }
 
 .move {
+	float: left;
+}*/
 
+.float {
+	float: left;
 }

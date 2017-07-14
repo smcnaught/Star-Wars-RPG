@@ -16,6 +16,8 @@
 	    var myDef = "";
 
 function reset() {	
+	
+	$("#picRow").show();
 
 	$(".restart").hide();
 	$(".attackButton").show();
@@ -169,7 +171,8 @@ var characters = {
 	       }
 	               
 	       // Clears the characters from the top.
-	       $("#picRow").empty();
+	       // $("#picRow").empty();
+	       $("#picRow").hide();
 	      
     });
 
@@ -295,7 +298,7 @@ var characters = {
 
      		 // When you click "Restart" the game begins again. 
      		 $(".restart").click(function(){
-     		 	reset();
+     		 	location.reload(true);
      		 })
      		      			
      		}
@@ -317,8 +320,8 @@ var characters = {
 
      			 // When you click "Restart" the game begins again. 
 	     		 $(".restart").click(function(){
-	     		 	reset();
-	     		 })
+	     		 	location.reload(true);
+	     		 });
 
      		}      
      		
