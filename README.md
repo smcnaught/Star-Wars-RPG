@@ -1,4 +1,4 @@
-# week-4-game
+# Star Wars RPG
 jQuery Star Wars Game - Week 4 Assignment
 
 
